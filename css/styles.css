@@ -264,35 +264,31 @@ img {
 
 .work-list {
   --item: 3;
-}
-
-.work-img {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .work-text-img {
   position: absolute;
-   height: 70px;
- width: 100%;
-background-color: rgba(47, 48, 58, 0.8);
-gap: 30px;
- display: flex;
- align-items: center;
- justify-content: center;
- 
-
+  height: 70px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 27px 82px;
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 .work-text {
   font-weight: 700;
+  font-size: 14px;
   line-height: calc(16 / 14);
-  padding: 27 auto;
   text-align: center;
   text-transform: uppercase;
-
+  
   color: var(--second-text-cl);
-  background-color: rgba(47, 48, 58, 0.8);
-  }
+}
 
 /* Наша команда */
 
