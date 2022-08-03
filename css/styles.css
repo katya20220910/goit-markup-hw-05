@@ -13,6 +13,7 @@
   --item: 4;
   --card-text: #eeeeee;
   --icon: #afb1b8;
+  --anime-basic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -122,8 +123,7 @@ img {
 .nav-link:hover,
 .nav-link-current {
   color: var(--accent-text-cl);
-  transform: 250ms;
-}
+  }
 
 .list-nav-contact {
   display: flex;
@@ -137,6 +137,7 @@ img {
   align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color var(--anime-basic);
 }
 
 .header-icon {
@@ -206,6 +207,7 @@ img {
   padding: 10px 32px;
   border: none;
   max-width: 201px;
+  transition: background-color 550ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:focus,
@@ -338,6 +340,7 @@ img {
   border: 1px solid currentColor;
   border-radius: 4px;
   color: var(--icon);
+  transition: color var(--anime-basic);
 }
 
 .client-logo:focus,
@@ -381,6 +384,7 @@ img {
 
 .link-contact {
   color: var(--link-contact-cl);
+  transition: color var(--anime-basic);
 }
 
 .link-contact:focus,
@@ -422,6 +426,7 @@ img {
   cursor: pointer;
   border: none;
   padding: 6px 22px;
+  transition: color var(--anime-basic), background-color var(--anime-basic), box-shadow var(--anime-basic);
 }
 
 .buttons:hover,
@@ -439,6 +444,7 @@ img {
 .project-link {
   display: flex;
   flex-direction: column;
+  transition: box-shadow var(--anime-basic), trantransform var(--anime-basic);
 }
 
 .project-link:focus,
@@ -461,7 +467,8 @@ img {
       padding: 63px 24px;
   background-color: rgba(33, 150, 243, 0.9);
 transform: translateY(100%);
-transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: transform var(--anime-basic);
+
 }
 
 .text-overlay {
@@ -517,6 +524,7 @@ transform: translateY(0);
   height: 44px;
   border-radius: 50%;
   color: var(--icon);
+  transition: color var(--anime-basic), background-color var(--anime-basic);
 }
 
 .social-icon {
@@ -547,6 +555,7 @@ transform: translateY(0);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity var(--anime-basic), visibility var(--anime-basic);
 }
 
 .backdrop.is-hidden {
@@ -556,9 +565,13 @@ transform: translateY(0);
 }
 
 .modal {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 528px;
   height: 581px;
+  transform: translate(-50%, -50%) scale(1.25) rotate(360deg);
+  transition: transform var(--anime-basic);
   background-color: var(--second-text-cl);
   border-radius: 4px;
 }
@@ -577,4 +590,8 @@ transform: translateY(0);
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.1) rotate(180deg);
 }
